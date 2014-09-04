@@ -1,0 +1,81 @@
+<!--
+* This is the primary html file for the Whitehat/Jira Status Page. Based off
+* the foundation index boiler code.
+*
+* Last update: July 21, 2014
+* Concerns: May not function if the Whitehat API Key for mwolf1 expires
+* $Id: //depot/iop/development/devops/security/whitehat-jira-status-page/
+* index.html$
+* $Author: mwolf1 $
+* $Date: $2014/07/02 $
+-->
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Coordinator</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo.png" />
+    <script type="text/javascript" src="js/vendor/jquery.js"></script>
+    <script type="text/javascript" src="js/knockout.js"></script>
+    <script type="text/javascript" src="js/everything.js"></script>
+</head>
+<body>
+<div class = "wrapper">
+  <div class="top row">
+    <div class="large-9 columns">
+      <img src="img/logo.png" width="100px" align="left" />
+      <h1>&nbsp;File Coordinator</h1>
+    </div>
+    <div class="large-3 columns">
+      <a href="#" class="button">About</a>
+      <a href="#" onclick="alert('solid');" class="button">Sign In</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 medium-12 columns">
+      <form>
+        <div class="row">
+            <div class="large-12 columns">
+                <label></label>
+                <input type="search"
+                  placeholder=
+                  "Filter by site, name, status, assignee, or issue ID"
+                  data-bind="value: query, valueUpdate: 'keyup'"
+                  autocomplete="off">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+   <div id="container"
+             data-bind="template: {name:'site', foreach:issues}">
+    </div>
+    <!--so basically this loads in the image and the filename for each entry as
+    sorted by the knockout filter-->
+    <script type="text/html" id="site">
+      <div id="row">
+        <div class="large-3 medium-3 small-3 columns">
+          <div class="callout panel", data-bind="style: { background: color}">
+            <p class='data', data-bind="text: name"></p>
+            <a data-bind="attr: { href: create_issue_url}">
+            <img src=filename width="40px"
+              data-bind="style:{margin:img_padding}"></a>
+
+          </div>
+        </div>
+      </div>
+    </script>
+
+  <hr />
+
+        <footer>
+            Michael Wolf
+        </footer>
+
+    </div>
+</div>
+</body>
+</html>

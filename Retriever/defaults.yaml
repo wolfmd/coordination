@@ -1,0 +1,11 @@
+jira_authentication: Basic YWRtaW46RmVhciFuMHQ=
+protocol: https
+proxy: http://proxy.skylab.emsaws.com:8080
+sentinel_key: 27e91198-e540-49e7-843a-075fbffd722f
+sentinel_base: /api/vuln/?page:order_by=date&query_status=open&display_vulnerab\
+  ility=1&display_attack_vectors=1&display_attack_vector_notes=1&display_attack\
+  _vector_flagged=0&display_description=0&display_solution=0&display_qanda=0&di\
+  splay_request=0&display_response=0&display_body=0&display_headers=0&display_a\
+  bbr=0&display_stats=0&display_param=0&display_has_notes=1&display_cvss=0&disp\
+  lay_tags=0&key=
+timeout: 5.0
